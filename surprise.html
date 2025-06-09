@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>เซอร์ไพรส์วันเกิด 💕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffd6ec);
+      color: #ff3399;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      animation: fadeIn 1.5s ease;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gift-box {
+      width: 120px;
+      margin: 30px auto;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hidden-content {
+      display: none;
+      animation: fadeIn 2s ease;
+    }
+
+    .heart-bubble {
+      position: fixed;
+      bottom: -20px;
+      font-size: 24px;
+      animation: bubble 8s linear infinite;
+      opacity: 0.6;
+      color: #ff66aa;
+      z-index: 0;
+    }
+
+    @keyframes bubble {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-120vh) scale(1.5); }
+    }
+
+    .slideshow {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      max-width: 300px;
+      margin: 30px auto;
+      border-radius: 20px;
+      border: 5px solid #ff99cc;
+    }
+
+    .slideshow img {
+      width: 100%;
+      animation: slide 15s infinite;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
+    .popup {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      border: 4px solid #ff99cc;
+      display: none;
+      box-shadow: 0 0 15px #ffb6d5;
+      z-index: 100;
+    }
+
+    /* 🎵 เพลงป๊อปอัพ */
+    #audioPlayer {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffe4f0;
+      border: 2px solid #ff99cc;
+      border-radius: 30px;
+      padding: 10px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h1>สุขสันต์วันเกิดนะคะ 💖</h1>
+    <p>เค้ามีของขวัญเล็ก ๆ ให้เธอด้วยนะ ลองคลิกดูสิ 🎁</p>
+    <img src="img/www.png" class="gift-box" onclick="revealGift()" alt="กล่องของขวัญ"/>
+
+    <div class="hidden-content" id="giftContent">
+      <p> เค้ารักเธอที่สุดเลยนะ ขอบคุณที่อยู่ด้วยกันมาตลอด เค้ารู้สึกโชคดีมากๆ ที่มีเธออยู่ข้างๆ คอยยิ้มให้ คอยรับฟัง คอยซัพพอร์ต และคอยเป็นพลังงานบวกให้กันทุกวัน
+        ไม่ว่าเวลาจะผ่านไปนานแค่ไหน เค้าก็อยากจะดูแลเธอให้ดีที่สุด อยากเห็นเธอยิ้ม หัวเราะ แล้วก็มีความสุขทุกวัน 🎂 เค้าสัญญาว่าจะอยู่ข้างๆ เธอเสมอ ทั้งในวันที่สดใส และในวันที่อ่อนล้า
+        ขอให้ปีนี้เป็นปีที่ดีสำหรับเธอ เต็มไปด้วยความสุข ความสำเร็จ และพลังบวกที่ไม่มีสิ้นสุด ✨ อย่าเหนื่อยกับอะไรเยอะเกินไปนะ เค้ายังอยู่ตรงนี้ พร้อมจะเป็นที่พักใจให้เสมอ</p>
+      <img src="img/สีเบจ สีน้ำเงิน สีชมพู สุขสันต์วันเกิด การ์ด.jpg" width="200" style="border-radius: 20px; border: 5px solid #ffaadd;" />
+    </div>
+  </section>
+
+  <section style="background: #fff8fb;">
+    <h1>อยู่ด้วยกันไปนานๆเลยนะ </h1>
+    <div class="slideshow">
+      <img src="img/2.jpg">
+      <img src="img/5656.jpg">
+      <img src="img/IMG_20241111_150015.jpg">
+    </div>
+    <p>แต่ละรูปคือความทรงจำดี ๆ ที่เค้ามีให้เธอ 💗</p>
+  </section>
+
+  <!-- 🚀 ป๊อปอัป -->
+  <div class="popup" id="popup">
+    💌 พิเศษสุดท้าย เค้าอยากบอกว่า...  
+    อยู่กับเธอทุกวันมันคือของขวัญที่ดีที่สุดของเค้าเลยนะ 💞
+  </div>
+
+  <!-- 🎵 เพลงเบา ๆ -->
+  <div id="audioPlayer">
+    <audio controls autoplay loop>
+      <source src="sound/original sound - 6t_pxxm_1749446195_musicaldown.com.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart-bubble';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.innerText = '💖';
+      heart.style.fontSize = 20 + Math.random() * 30 + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 600);
+
+    function revealGift() {
+      document.getElementById('giftContent').style.display = 'block';
+      confetti({ particleCount: 200, spread: 150 });
+    }
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 100) {
+        document.getElementById('popup').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

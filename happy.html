@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>สุขสันต์วันเกิดนะคะ 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6f0;
+      font-family: 'Kanit', sans-serif;
+      color: #ff66a3;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    img.main-pic {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #ff99cc;
+      margin: 20px 0;
+      box-shadow: 0 0 15px #ff99cc;
+    }
+
+    button {
+      background-color: #ff99cc;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      border-radius: 20px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      margin-top: 20px;
+      padding-bottom: 10px;
+    }
+
+    .gallery img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #ffa3cc;
+    }
+
+    .floating-image {
+      position: fixed;
+      bottom: -200px;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #ff99cc;
+      box-shadow: 0 0 10px #ffb6d5;
+      animation: floatUp 8s ease-in infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1 -->
+  <section>
+    <h1>สุขสันต์วันเกิดนะแฟน 💕</h1>
+    <img class="main-pic" src="img/42EB92A3-536B-48C3-BC15-EB080765F48F.jpg" alt="แฟนของเรา" />
+    <p>
+      ตลอดเวลาที่ได้รู้จักกัน ได้หัวเราะด้วยกัน ได้ผ่านวันธรรมดาๆ ไปด้วยกัน มันทำให้เค้ารู้ว่า<br>
+      การมีเธออยู่ข้างๆ คือของขวัญที่ล้ำค่าที่สุดที่เค้าเคยได้รับ<br><br>
+      ขอบคุณที่อยู่ด้วยกันในวันที่ดี และวันที่ไม่ดี<br>
+      ขอบคุณที่เป็นที่พักใจ เป็นรอยยิ้ม และเป็นกำลังใจให้กันเสมอ<br><br>
+      เค้าอาจจะไม่ได้ดีที่สุด แต่เค้าจะพยายามทำทุกวันให้ดีที่สุดสำหรับเรา<br>
+      ขอให้วันเกิดปีนี้และปีต่อๆไป เธอมีแต่ความสุข ได้ทำในสิ่งที่รัก และไม่ว่าเธอจะอยู่ที่ไหน<br>
+      ก็อย่าลืมว่า ยังมีคนคนนี้ ที่รักเธอมาก ๆ อยู่ตรงนี้เสมอนะ 💗<br><br>
+      รักมากนะคั้บบเธอออ 🎂💘
+    </p>
+    <button onclick="showFloatingImages()">กดเล้ยยย 🎈</button>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+function shootConfetti() {
+  confetti({
+    particleCount: 150,
+    spread: 90,
+    origin: { y: 0.6 }
+  });
+}
+</script>
+
+
+  <!-- Section 2: Gallery -->
+  <section style="background: #fff0f5;">
+    <h1>รูปหมูอ้วนนน</h1>
+    <div class="gallery">
+      <img src="img/4.jpg" />
+      <img src="img/5.jpg" />
+      <img src="img/6.jpg" />
+      <img src="img/7.jpg" />
+    </div>
+  </section>
+
+
+  <!-- เพลงประกอบ -->
+  <audio autoplay loop>
+    <source src="https://example.com/love-song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- รูปลอย ๆ -->
+  <script>
+    const imageUrls = [
+      'img/42EB92A3-536B-48C3-BC15-EB080765F48F.jpg',
+      'img/van.jpg',
+      'img/2.jpg',
+      'img/3.jpg'
+    ];
+
+    function showFloatingImages() {
+      for (let i = 0; i < 8; i++) {
+        const img = document.createElement('img');
+        img.src = imageUrls[Math.floor(Math.random() * imageUrls.length)];
+        img.className = 'floating-image';
+        img.style.left = Math.random() * 90 + 'vw';
+        img.style.animationDuration = 6 + Math.random() * 4 + 's';
+        document.body.appendChild(img);
+        setTimeout(() => img.remove(), 10000);
+      }
+    }
+  </script>
+</body>
+</html>
